@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';''
 import axios from 'axios';
 
 import SavedList from './Movies/SavedList';
@@ -29,8 +30,11 @@ export default function App () {
   return (
     <div>
       <SavedList list={[ /* This is stretch */]} />
-
-      <div>Replace this Div with your Routes</div>
+      
+      <BrowserRouter>
+        <Route path='/' component={MovieList} />
+      </BrowserRouter>
+      
     </div>
   );
 }
